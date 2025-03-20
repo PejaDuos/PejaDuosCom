@@ -98,11 +98,6 @@ function BackgroundSwitcher() {
     BackgroundEl.style.backgroundImage = 'url(bgs/BG_' + BackgroundImageQueuePos.toString() + '.jpg';
 }
 
-// BackgroundEl.addEventListener('click', () => {
-//     BackgroundImageQueuePos = (BackgroundImageQueuePos + 1) % BackgroundImageQueueLength;
-//     BackgroundEl.style.backgroundImage = 'url(bgs/BG_' + BackgroundImageQueuePos.toString() + '.jpg';
-// });
-
 setInterval(BackgroundSwitcher, 15000);
 
 
