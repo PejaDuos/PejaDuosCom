@@ -1,63 +1,70 @@
-const DownLoadButtS = document.querySelectorAll('a.downloadbutt');
-DownLoadButtS.forEach(DownLoadButt => {
-    const DownLoadButtAnimEl = DownLoadButt.querySelector('img');
-    let isDownLoadButtAnimElEnd = true;
-    DownLoadButtAnimEl.addEventListener('animationend', () => {
-        isDownLoadButtAnimElEnd = true;
+const DownloadButtonListener = () =>{
+    const DownLoadButtS = document.querySelectorAll('a.downloadbutt');
+    DownLoadButtS.forEach(DownLoadButt => {
+        const DownLoadButtAnimEl = DownLoadButt.querySelector('img');
+        let isDownLoadButtAnimElEnd = true;
+        DownLoadButtAnimEl.addEventListener('animationend', () => {
+            isDownLoadButtAnimElEnd = true;
+        });
+        DownLoadButtAnimEl.addEventListener('animationstart', () => {
+            isDownLoadButtAnimElEnd = false;
+        });
+        DownLoadButt.addEventListener('mouseenter', () => {
+            if (isDownLoadButtAnimElEnd) {
+                DownLoadButtAnimEl.style.animation = 'none';
+                void DownLoadButtAnimEl.offsetWidth;
+                DownLoadButtAnimEl.style.animation = 'DownloadButtonAnimation 1s';
+            }
+        });
     });
-    DownLoadButtAnimEl.addEventListener('animationstart', () => {
-        isDownLoadButtAnimElEnd = false;
-    });
-    DownLoadButt.addEventListener('mouseenter', () => {
-        if (isDownLoadButtAnimElEnd) {
-            DownLoadButtAnimEl.style.animation = 'none';
-            void DownLoadButtAnimEl.offsetWidth;
-            DownLoadButtAnimEl.style.animation = 'DownloadButtonAnimation 1s';
-        }
-    });
-});
+}
 
-const BananaButtS = document.querySelectorAll('a.bananabutt');
-BananaButtS.forEach(BananaButt => {
-    const BananaButtAnimEl = BananaButt.querySelector('img');
-    let isBananaButtAnimElEnd = true;
-    BananaButtAnimEl.addEventListener('animationend', () => {
-        isBananaButtAnimElEnd = true;
+const BananaButtonListener = () =>{
+    const BananaButtS = document.querySelectorAll('a.bananabutt');
+    BananaButtS.forEach(BananaButt => {
+        const BananaButtAnimEl = BananaButt.querySelector('img');
+        let isBananaButtAnimElEnd = true;
+        BananaButtAnimEl.addEventListener('animationend', () => {
+            isBananaButtAnimElEnd = true;
+        });
+        BananaButtAnimEl.addEventListener('animationstart', () => {
+            isBananaButtAnimElEnd = false;
+        });
+        BananaButt.addEventListener('mouseenter', () => {
+            if (isBananaButtAnimElEnd) {
+                BananaButtAnimEl.style.animation = 'none';
+                void BananaButtAnimEl.offsetWidth;
+                BananaButtAnimEl.style.animation = 'BananaButtonAnimation 2s';
+            }
+        });
     });
-    BananaButtAnimEl.addEventListener('animationstart', () => {
-        isBananaButtAnimElEnd = false;
-    });
-    BananaButt.addEventListener('mouseenter', () => {
-        if (isBananaButtAnimElEnd) {
-            BananaButtAnimEl.style.animation = 'none';
-            void BananaButtAnimEl.offsetWidth;
-            BananaButtAnimEl.style.animation = 'BananaButtonAnimation 2s';
-        }
-    });
-});
+}
 
-const VideoButtS = document.querySelectorAll('a.videobutt');
-VideoButtS.forEach(VideoButt => {
-    const VideoButtAnimEl1 = VideoButt.querySelector('img:nth-child(2)');
-    const VideoButtAnimEl2 = VideoButt.querySelector('img:nth-child(3)');
-    let isVideoButtAnimElEnd = true;
-    VideoButtAnimEl1.addEventListener('animationend', () => {
-        isVideoButtAnimElEnd = true;
+const VideoButtonListener = () =>{
+    const VideoButtS = document.querySelectorAll('a.videobutt');
+    VideoButtS.forEach(VideoButt => {
+        const VideoButtAnimEl1 = VideoButt.querySelector('img:nth-child(2)');
+        const VideoButtAnimEl2 = VideoButt.querySelector('img:nth-child(3)');
+        let isVideoButtAnimElEnd = true;
+        VideoButtAnimEl1.addEventListener('animationend', () => {
+            isVideoButtAnimElEnd = true;
+        });
+        VideoButtAnimEl1.addEventListener('animationstart', () => {
+            isVideoButtAnimElEnd = false;
+        });
+        VideoButt.addEventListener('mouseenter', () => {
+            if (isVideoButtAnimElEnd) {
+                VideoButtAnimEl1.style.animation = 'none';
+                VideoButtAnimEl2.style.animation = 'none';
+                void VideoButtAnimEl1.offsetWidth;
+                void VideoButtAnimEl2.offsetWidth;
+                VideoButtAnimEl1.style.animation = 'VideoButtonAnimationPart1 1s forwards';
+                VideoButtAnimEl2.style.animation = 'VideoButtonAnimationPart2 1s forwards';
+            }
+        })
     });
-    VideoButtAnimEl1.addEventListener('animationstart', () => {
-        isVideoButtAnimElEnd = false;
-    });
-    VideoButt.addEventListener('mouseenter', () => {
-        if (isVideoButtAnimElEnd) {
-            VideoButtAnimEl1.style.animation = 'none';
-            VideoButtAnimEl2.style.animation = 'none';
-            void VideoButtAnimEl1.offsetWidth;
-            void VideoButtAnimEl2.offsetWidth;
-            VideoButtAnimEl1.style.animation = 'VideoButtonAnimationPart1 1s forwards';
-            VideoButtAnimEl2.style.animation = 'VideoButtonAnimationPart2 1s forwards';
-        }
-    })
-});
+}
+
 
 const PlayCelesteButt = document.querySelector('a.celesteplay');
 const PlayCelesteButtAnimEl = PlayCelesteButt.querySelector('img');
