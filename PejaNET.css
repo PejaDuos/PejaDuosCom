@@ -81,7 +81,8 @@ div.MainBody{
     left:0;
     right:0;
 
-    margin-top:80px;
+    /* margin-top:80px; */
+    margin-top: 0px;
     margin-left: 15%;
     padding-left: 1%;
     padding-right: 1%;
@@ -96,10 +97,12 @@ div.MainBody{
     border-bottom-left-radius: 50px;
 
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    align-items: center;
     flex-direction: column;
     gap: 20px;
 }
+
 
 
 /* MINOR INFO */
@@ -110,7 +113,7 @@ div.MinorInfo{
     display: flex;
     padding: 6px;
     margin: 0px;
-    margin-top: 20px;
+    margin-top: 100px;
     position: relative;
     gap: 15px;
 }
@@ -153,6 +156,7 @@ div.MapsColumn {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    /* min-height: 50vh; */
 }
 /* TABLE CELL Editing */
 div.MapsColumn div.MapBox{
@@ -163,20 +167,31 @@ div.MapsColumn div.MapBox{
     position: relative;
     
     display: flex;
+    align-items: start;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: space-between;
+    gap: 0;
+
+    animation: ModLoaded 1s ease-in-out forwards;
+}
+div.flextest {
+    display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
 }
 img.tablepicture{
     border-radius: 20px;
     object-fit: cover;
     object-position: center;
     height: 180px;
-    width: 320px;
+    width: 360px;
     padding: 0;
     margin: 0;
     border: 3px solid rgba(185, 175, 213, 1);
-    margin-right: auto;
 }
 div.tablecontent{
     position: relative;
@@ -184,42 +199,43 @@ div.tablecontent{
     /* margin-left: 330px; */
     height: 180px;
     flex: 1;
-    min-width: 500px;
+    min-width: 350px;
 }
 div.tablecontent h2{
     margin: 0;
     font-family: lucida sans unicode;
     font-size: 28px;
     line-height: 30px;
-    width: calc(100% - 66px);
+    width: 100%;
 }
 div.tablecontent p{
     margin: 0;
     font-size: 22px;
     line-height: 24px;
-    width: calc(100% - 66px);
+    width: 100%;
 }
-div.tablecontent ul{
+div.tablecontent div.subscriptions{
+    display: flex;
+    flex-direction: row;
+    min-width: 360px;
+    flex-wrap: wrap;
+    gap: 30px;
     margin: 0;
     padding: 0;
     margin-bottom: 5px;
     position: absolute;
     bottom: 0;
-    width: 500px;
-    /* width: calc(100% - 66px); */
+    width: 100%;
 }
-div.tablecontent ul li{
+div.tablecontent div.subscriptions li{
     font-size: 22px;
-    display:inline-block;
-    padding: 0;
-    width: 150px;
+    display:inline;
     height: 24px;
 }
 div.tablebuttons {
-    position: absolute;
+    /* position: absolute; */
     top: 6px;
     right: 6px;
-
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -269,6 +285,12 @@ div.tablebuttons a img{
 }
 
 
+
+
+@keyframes ModLoaded {
+    from { opacity: 0; transform: translateY(15%) scale(95%);}
+    to { opacity: 1; transform: translateY(0) scale(100%); }
+}
 
 .FillerBody {
     position: relative;
