@@ -1,0 +1,299 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+
+div.SiteHeader{
+    position:fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px;
+    height: 80px;
+    background-color:rgb(48, 41, 69);
+}
+div.SiteHeader h1{
+    margin: 0;
+    margin-left: 5%;
+    color:aliceblue;
+    font-family: lucida sans unicode;
+    font-size:40px;
+}
+div.SiteHeader a.celesteplay{
+    width: 60px;
+    height: 60px;
+    margin-right: 5%;
+    position: relative;
+}
+a.celesteplay img{
+    width: 60px;
+    height: 60px;
+}
+/* a.celesteplay::after {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+a.celesteplay:hover::after {
+    opacity: 1;
+    content:attr(data-tooltip);
+    position: absolute;
+    top: 30%;
+    left: -50%;
+    transform: translateX(-50%);
+    color:rgba(185, 175, 213, 0.8);
+    font-size:16px;
+    white-space: nowrap;
+} */
+
+
+div.MainBodyBG{
+    position:fixed;
+    top: 0;
+    left:0;
+    right:0;
+    z-index: -1000;
+
+    margin: 0;
+    margin-top:0;
+    height: 100%;
+
+    background-image: url(bgs/BG_0.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: 50% 100%;
+    
+    cursor: pointer;
+    transition: background-image 2s ease;
+}
+div.MainBody{
+    top:0;
+    left:0;
+    right:0;
+
+    /* margin-top:80px; */
+    margin-top: 0px;
+    margin-left: 15%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+    width: 70%;
+    
+    background-color: rgba(72, 63, 99, 0.99);
+    border-left: 3px solid rgba(185, 175, 213, 0.8);
+    border-right: 3px solid rgba(185, 175, 213, 0.8);
+    border-bottom: 3px solid rgba(185, 175, 213, 0.8);
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+/* MINOR INFO */
+div.MinorInfo{
+    color: aliceblue;
+    font-family: 'Segoe UI';
+    
+    display: flex;
+    padding: 6px;
+    margin: 0px;
+    margin-top: 100px;
+    position: relative;
+    gap: 15px;
+}
+div.MinorInfo img.Avatar{
+    object-fit: cover;
+    object-position: center;
+
+    height: 186px;
+    width: 186px;
+
+    border: 3px solid rgba(185, 175, 213, 1);
+    border-radius: 20px;
+}
+div.MinorInfo div.Description{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    justify-content:left;
+    position: relative;
+    top: 0;
+}
+div.Description h2{
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+}
+div.Description p{
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* TABLE EDITING */
+div.MapsColumn {
+    gap: 20px;
+    color:aliceblue;
+    font-family: 'Segoe UI';
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* min-height: 50vh; */
+}
+/* TABLE CELL Editing */
+div.MapsColumn div.MapBox{
+    margin:0;
+    padding:6px;
+    border: 3px solid rgba(185, 175, 213, 1);
+    border-radius: 30px;
+    position: relative;
+    
+    display: flex;
+    align-items: start;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: space-between;
+    gap: 0;
+
+    animation: ModLoaded 1s ease-in-out forwards;
+}
+div.flextest {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+img.tablepicture{
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: center;
+    height: 180px;
+    width: 360px;
+    padding: 0;
+    margin: 0;
+    border: 3px solid rgba(185, 175, 213, 1);
+}
+div.tablecontent{
+    position: relative;
+    text-align: left;
+    /* margin-left: 330px; */
+    height: 180px;
+    flex: 1;
+    min-width: 350px;
+}
+div.tablecontent h2{
+    margin: 0;
+    font-family: lucida sans unicode;
+    font-size: 28px;
+    line-height: 30px;
+    width: 100%;
+}
+div.tablecontent p{
+    margin: 0;
+    font-size: 22px;
+    line-height: 24px;
+    width: 100%;
+}
+div.tablecontent div.subscriptions{
+    display: flex;
+    flex-direction: row;
+    min-width: 360px;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+div.tablecontent div.subscriptions li{
+    font-size: 22px;
+    display:inline;
+    height: 24px;
+}
+div.tablebuttons {
+    /* position: absolute; */
+    top: 6px;
+    right: 6px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+div.tablebuttons a{
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+div.tablebuttons a img{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+@keyframes DownloadButtonAnimation {
+    from {transform: scaleX(1);}
+    50% {transform: scaleX(-1);}
+    to {transform: scaleX(1);}
+}
+@keyframes BananaButtonAnimation {
+    from {transform: scaleX(1);}
+    25% {transform: scaleX(-1);}
+    50% {transform: scaleX(1);}
+    75% {transform: scaleX(-1);}
+    to {transform: scaleX(1);}
+}
+@keyframes VideoButtonAnimationPart1 {
+    from {transform:scaleX(1.0); transform: translateX(0);}
+    50% {transform:scaleX(0.6); transform: translateX(-10%);}
+    to {transform:scaleX(1.0); transform: translateX(0);}
+}
+@keyframes VideoButtonAnimationPart2 {
+    from {transform:scaleX(1.0); transform: translateX(0);}
+    50% {transform:scaleX(0.6); transform: translateX(10%);}
+    to {transform:scaleX(1.0); transform: translateX(0);}
+}
+@keyframes PlayCelesteButton {
+    from {transform:rotate(0deg); transform-origin: center;}
+    33% {transform:rotate(120deg); transform-origin: center;}
+    66% {transform:rotate(240deg); transform-origin: center;}
+    to {transform:rotate(360deg); transform-origin: center;}
+}
+
+
+
+
+@keyframes ModLoaded {
+    from { opacity: 0; transform: translateY(15%) scale(95%);}
+    to { opacity: 1; transform: translateY(0) scale(100%); }
+}
+
+.FillerBody {
+    position: relative;
+    height: 1080px;;
+    bottom: 0;
+}
